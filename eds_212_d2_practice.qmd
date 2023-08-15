@@ -4,6 +4,44 @@ format: html
 editor: visual
 ---
 
-## trial
+## Lists
 
-more stufff
+```{r}
+urchins <- list("blue",c(1,2,3),c("lunch","dinner","dessert"),5L)
+
+urchins
+
+#Returns element value by list
+urchins_list<- urchins[2]
+class(urchins_list)
+# Returns element values as vectors
+urchins_vector <- urchins[[2]]
+class(urchins_vector)
+```
+
+```{r}
+urchins <- list(color = "blue",numbers = c(1,2,3),food = c("lunch","dinner","dessert"), int= 5L)
+
+urchins$color
+```
+
+Importance of setting the values to names
+
+```{r}
+sample1 <- c(1,2,3,4,5,3,2,4,1)
+sample2 <- c(3,4,1,6,7,4,8,6,10,11)
+
+ttest_example <- t.test(sample1,sample2)
+ttest_example
+
+# The  p-test tells us there only a 1.15 percent that the samples are from different populations -- very unlikely and less then 5% unlikely enough to say they are most likely drawn from populations with the same mean
+
+#Call specific values
+ttest_example$p.value
+```
+
+Mean size for trees in Size A is greater then the mean size in Site B (.. my statistical summary. `r ttest_example$p.value`)
+
+Git ignore
+
+Stop tracking htlm file go to git ignore \*.html (all html)
