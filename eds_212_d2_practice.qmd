@@ -4,6 +4,10 @@ format: html
 editor: visual
 ---
 
+```{r}
+library(tidyverse)
+```
+
 ## Lists
 
 ```{r}
@@ -46,4 +50,33 @@ Git ignore
 
 Stop tracking htlm file go to git ignore \*.html (all html)
 
-a
+## Data Frames
+
+```{r}
+fruit <- data.frame(type = c("apple", "banana", "peach"),
+                    mass = c(130,195,150))
+
+fruit
+
+fruit[3,2]
+```
+
+Purrr package(known for iterations and pluck function for indexing in data structures)
+
+```{r}
+#Look for the type and 2nd index
+purrr::pluck(fruit,"type",2)
+
+#Equivelant to
+fruit$type[2]
+
+
+```
+
+```{r}
+#Just grab the second piece of the first column (there is a vector)
+starwars$starships[[1]][2]
+
+#or
+purrr::pluck(starwars,"starships",1,2)
+```
